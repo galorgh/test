@@ -1,0 +1,14 @@
+name: Test
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  playground:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - run: |
+          echo '${{ toJSON(github) }}'
